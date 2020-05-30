@@ -1,0 +1,67 @@
+<div class="row my-5">
+    <form [formGroup]="form" class="form-horizontal" novalidate (ngSubmit)="onSubmit(form.value)">
+        <div class="col-sm-6" style="margin-top: 40px;">
+            <div class="form-group">
+                <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">User Name: </label>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                    <input type="text" formControlName="username" required class="form-control" id="username"
+                        placeholder="Enter username">
+                    <div *ngIf="!username.valid && (username.dirty || username.touched)" class="error-text">
+                        <div *ngIf="username.errors.required">
+                            user name is required
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="form-group">
+                <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">Email: </label>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                    <input type="email" formControlName="email" required class="form-control" id="email"
+                        placeholder="email">
+                    <div *ngIf="!email.valid && (email.dirty || email.touched)" class="error-text">
+                        <div *ngIf="email.errors.required">
+                            email is required
+                        </div>
+                        <div *ngIf="email.errors.email">
+                            Enter a valid email
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="form-group">
+                <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">Password: </label>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                    <input type="password" formControlName="password" required class="form-control" id="password"
+                        placeholder="Enter Password">
+                    <div *ngIf="!password.valid && (password.dirty || password.touched)" class="error-text">
+                        <div *ngIf="password.errors.required">
+                            password is required
+                        </div>
+                        <div *ngIf="password.hasError('minlength')">
+                            Password isn't long enough,
+                            minimum of 6 characters
+                        </div>
+                        <div *ngIf="password.hasError('maxlength')">
+                            Password should be less than
+                            of 24 characters
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <button color="primary" style="float: right;" class="btn btn-success" type="submit">SIGN
+                IN</button>
+            <li routerLinkActive="active" style="float: right;
+            margin-right: 15px;
+        ">
+                <a class="btn btn-success" [routerLink]="['/register']">
+                    Register
+                </a>
+            </li>
+        </div>
+
+
+
+    </form>
+</div>

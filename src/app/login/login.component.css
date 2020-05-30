@@ -1,0 +1,4 @@
+.add-member-label::after {
+    content: '*';
+    color: red;
+}

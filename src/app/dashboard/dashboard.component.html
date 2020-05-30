@@ -1,0 +1,34 @@
+<div class="row" style="margin-top:10px; margin-left: 2px;">
+    <div class="col-sm-6">
+        <div class="pills w-100 flex-p">
+            <ul class="nav nav-pills ">
+                <li routerLinkActive="active">
+                    <a class="btn btn-primary" [routerLink]="['/user']">
+                        User
+                    </a>
+                </li>
+                <li routerLinkActive="active">
+                    <a class="btn btn-primary" [routerLink]="['/userdetails/:id']">
+                        User Details
+                    </a>
+                </li>
+                <li routerLinkActive="active">
+                    <a class="btn btn-primary" style="float: right;" [routerLink]="['/dashboard']">
+                        Dashboard
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<div class="col-sm-6" style="margin-top: 30px;">
+
+    <!-- <div [chart]="chart"></div> -->
+    <ngx-charts-bar-horizontal [view]="view" [scheme]="colorScheme" [results]="single" [gradient]="gradient"
+        [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+        (select)="onSelect($event)" (activate)="onActivate($event)" (deactivate)="onDeactivate($event)">
+    </ngx-charts-bar-horizontal>
+
+</div>

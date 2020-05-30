@@ -1,0 +1,24 @@
+<div class="row" style="margin-top:10px; margin-left: 2px;">
+    <div class="col-sm-6">
+        <div class="pills w-100 flex-p">
+            <ul class="nav nav-pills ">
+                <li routerLinkActive="active">
+                    <a class="btn btn-primary" [routerLink]="['/user']">
+                        User
+                    </a>
+                </li>
+                <li routerLinkActive="active">
+                    <a class="btn btn-primary" [routerLink]="['/userdetails/:id']">
+                        User Details
+                    </a>
+                </li>
+                <li routerLinkActive="active">
+                    <a class="btn btn-primary" style="float: right;" [routerLink]="['/dashboard']">
+                        Dashboard
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
